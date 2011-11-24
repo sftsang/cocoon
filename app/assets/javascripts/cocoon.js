@@ -51,16 +51,16 @@
   });
 
   $('.remove_fields.dynamic').live('click', function(e) {
-    e.preventDefault();
     $(this).closest(".nested-fields").remove();
     trigger_removal_callback($(this));
+    e.preventDefault();
   });
 
   $('.remove_fields.existing').live('click', function(e) {
-    trigger_removal_callback($(this));
-    e.preventDefault();
     $(this).prev("input[type=hidden]").val("1");
     $(this).closest(".nested-fields").hide();
+    trigger_removal_callback($(this));
+    e.preventDefault();
   });
 
 })(jQuery);
